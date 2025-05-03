@@ -1,0 +1,24 @@
+# k8s/ingress.yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: custom-cicd-test-ingress
+  # Annotations needed if using cert-manager for auto-SSL later
+  # annotations:
+  #   cert-manager.io/cluster-issuer: letsencrypt-prod
+spec:
+  rules:
+  - host: custom-cicd-test.huber.net # The URL you want to use
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: custom-cicd-test-service # Points to the Service above
+            port:
+              number: 80 # Points to the Service's port
+  # tls: # Section for enabling HTTPS later
+  # - hosts:
+  #   - my-cool-app.yourdomain.com
+  #   secretName: my-cool-app-tls # K8s will store the certificate here
