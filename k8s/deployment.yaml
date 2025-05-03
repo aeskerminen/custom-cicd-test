@@ -1,0 +1,21 @@
+# k8s/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: custom-cicd-test # Choose a name for your app
+spec:
+  replicas: 2 # Run 2 copies for reliability
+  selector:
+    matchLabels:
+      app: custom-cicd-test
+  template:
+    metadata:
+      labels:
+        app: custom-cicd-test
+    spec:
+      containers:
+      - name: app
+        # !! THIS LINE GETS UPDATED BY GITHUB ACTIONS !!
+        image: ghcr.io/aeskerminen/custom-cicd-test:initial # Placeholder image
+        ports:
+        - containerPort: 80 # The port your app listens on INSIDE the container
