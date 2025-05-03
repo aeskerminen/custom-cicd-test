@@ -3,7 +3,7 @@ name: Build and Deploy to Homelab
 
 on:
   push:
-    branches: [ main ] # Trigger this workflow on pushes to the main branch
+    branches: [ master ] # Trigger this workflow on pushes to the main branch
 
 jobs:
   build-and-update-manifest:
