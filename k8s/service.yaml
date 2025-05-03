@@ -1,0 +1,13 @@
+# k8s/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: custom-cicd-test-service
+spec:
+  selector:
+    app: custom-cicd-test # Selects the pods from the Deployment
+  ports:
+  - protocol: TCP
+    port: 80 # The port the SERVICE listens on
+    targetPort: 80 # The port on the CONTAINER to send traffic to
+  type: ClusterIP # Only reachable inside the cluster initially
