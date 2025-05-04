@@ -25,6 +25,7 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }} # Provided automatically by GitHub
+          logout: false
 
       - name: Build and push Docker image
         id: build-push
