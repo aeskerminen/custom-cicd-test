@@ -4,10 +4,11 @@ name: Build and Deploy to Homelab
 on:
   push:
     branches: [ master ] # Trigger this workflow on pushes to the main branch
+    paths-ignore:
+      - 'k8s/deployment.yaml'
 
 jobs:
   build-and-update-manifest:
-    if: github.actor != 'github-actions[bot]'
     runs-on: self-hosted # IMPORTANT: Tells GitHub to use YOUR runner!
 
     steps:
