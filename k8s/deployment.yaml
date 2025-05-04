@@ -16,6 +16,6 @@ spec:
       containers:
       - name: app
         # !! THIS LINE GETS UPDATED BY GITHUB ACTIONS !!
-        image: ghcr.io/aeskerminen/custom-cicd-test:e06a4b1d1802f525884f2e5adff13833b8c55ca6
+        image: ghcr.io/aeskerminen/custom-cicd-test:42e9302982b5d261f1dfbf31e07ba2e474927183
         ports:
         - containerPort: 80 # The port your app listens on INSIDE the container
