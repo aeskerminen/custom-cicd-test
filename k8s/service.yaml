@@ -10,4 +10,5 @@ spec:
   - protocol: TCP
     port: 80 # The port the SERVICE listens on
     targetPort: 80 # The port on the CONTAINER to send traffic to
+    nodePort: 30069
   type: ClusterIP # Only reachable inside the cluster initially
