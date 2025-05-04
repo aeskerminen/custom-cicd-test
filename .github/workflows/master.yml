@@ -6,6 +6,10 @@ on:
     branches: [ master ] # Trigger this workflow on pushes to the main branch
     paths-ignore:
       - 'k8s/deployment.yaml'
+      - 'README.md'
+      - '.gitignore'
+      - 'package-lock.json'
+      - 'package.json'
 
 jobs:
   build-and-update-manifest:
